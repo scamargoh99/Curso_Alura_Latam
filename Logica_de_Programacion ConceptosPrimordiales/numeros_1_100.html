@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<h1>CALCULAR Todos los números pares del 1 al 100</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    
+    var numeros = 0;
+    while(numeros <= 100){
+        imprimir(numeros);
+        numeros= numeros + 2;
+    }
+    imprimir("FIN");
+</script>
