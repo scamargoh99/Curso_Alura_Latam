@@ -1,0 +1,31 @@
+<canvas width="600" height="400">
+	<script>
+		var pantalla = document.querySelector("canvas");
+		var pincel = pantalla.getContext("2d");
+
+		pincel.fillStyle = "grey";
+		pincel.fillRect(0,0,600,400);
+
+		function exibirAlerta(evento) {
+			var x = evento.pageX - pantalla.offsetLeft; // Crear una variable x que va hacer la posicion en la pizarra, para que solo me muestre coordenadas dentro de la pizarra, hay que restar a la pantalla, ya sea en cualquier dirección
+			var y = evento.pageY - pantalla.offsetTop;; // Crear una variable Y que va hacer la posicion en la pizarra
+			console.log(evento) // se observa las coordenadas en las que se hizo click
+			alert(x + "," + y);
+		}
+		function dibujarCirculo(evento) {
+			var x = evento.pageX - pantalla.offsetLeft;
+			var y = evento.pageY - pantalla.offsetTop;;
+
+			pincel.fillStyle = "blue"; // Graficar circulo azul
+			pincel.beginPath();
+			pincel.arc(x,y,10,0,2*3.14);
+			pincel.fill();
+			console.log(x + "," + y);
+		}
+
+		//pantalla.onclick =  exibirAlerta; // evento que se activa dando click realice lo siguiente
+
+		pantalla.onclick =  dibujarCirculo;
+		
+	</script>
+</canvas>

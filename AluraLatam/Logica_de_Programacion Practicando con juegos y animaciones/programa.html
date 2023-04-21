@@ -1,0 +1,29 @@
+<canvas width="600" height="400"> <!--Crear un area donde se pueda graficar, definir el ancho y largo de la pizarra -->
+	
+</canvas>
+
+<script>
+	var pantalla = document.querySelector("canvas");//como conectar JS con canva
+	var pincel = pantalla.getContext("2d"); // encargado de pintar, graficar en la pizarra
+  
+	pincel.fillStyle = "lightgrey"; //Propiedad/ caracteristica
+	pincel.fillRect(0,0, 600, 400); // funcion para llenar rectangulo, primer parametro es x y el segundo es y.EL tercero es el ancho y el cuarto largo
+
+	pincel.fillStyle = "green"; //Propiedad/ caracteristica
+	pincel.fillRect(0,0, 200, 400); // funcion para llenar rectangulo, primer parametro es x y el segundo es y.EL tercero es el ancho y el cuarto largo
+
+	pincel.fillStyle = "red"; //Propiedad/ caracteristica
+	pincel.fillRect(400,0, 200, 400); // funcion para llenar rectangulo, primer parametro es x y el segundo es y.EL tercero es el ancho y el cuarto largo
+
+	pincel.fillStyle = "yellow"; //Propiedad/ caracteristica
+	pincel.beginPath(); // Comenzar un nuevo camino
+	pincel.moveTo(300,200);  //Muevete a esa posicion
+	pincel.lineTo(200,400); //Dibujar una linea con esa posicion
+	pincel.lineTo(400,400); //Dibujar una linea con esa posicion
+	pincel.fill(); //Rellena la figura con el color dado
+
+	pincel.fillStyle = "blue"; //Propiedad/ caracteristica
+	pincel.beginPath(); // Comenzar un nuevo camino
+	pincel.arc(300,200,50,0,2*3.14); //Dibujar un circulo con esa posicion, el tamaño del radio, el angulo inicial y el angulo final.	
+	pincel.fill(); //Rellena la figura con el color dado
+</script>
